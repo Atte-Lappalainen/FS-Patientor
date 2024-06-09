@@ -10,7 +10,7 @@ import { NewEntryForm } from "./NewEntryForm";
 
 
 
-const SinglePatientPage = () => {
+const SinglePatientPage = (): JSX.Element => {
 
     const newId: unknown = useParams().id;
     const [welcome, setWelcome] = useState<string>('');

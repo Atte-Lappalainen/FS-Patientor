@@ -18,7 +18,7 @@ const genderOptions: GenderOption[] = Object.values(Gender).map(v => ({
   value: v, label: v.toString()
 }));
 
-const AddPatientForm = ({ onCancel, onSubmit }: Props) => {
+const AddPatientForm = ({ onCancel, onSubmit }: Props): JSX.Element => {
   const [name, setName] = useState('');
   const [occupation, setOccupation] = useState('');
   const [ssn, setSsn] = useState('');
