@@ -2,7 +2,7 @@ import express from 'express';
 import routerTest from './controllers/router';
 import cors from 'cors';
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 const requestLogger = (request: { method: any; path: any; body: any; }, _response: any, next: () => void) => {
   console.log('Method:', request.method)
@@ -13,6 +13,7 @@ const requestLogger = (request: { method: any; path: any; body: any; }, _respons
 }
 
 const app = express();
+app.use(express.static('dist'))
 app.use(requestLogger)
 app.use(express.json());
 app.use(requestLogger)
