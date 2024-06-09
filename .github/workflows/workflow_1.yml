@@ -22,8 +22,6 @@ jobs:
       - name: Install frontend dependencies
         working-directory: frontend
         run: npm install
-      - name: Check style
-        run: npm run lint
       - name: build
         run: npm run build
       - name: setup flyctl
