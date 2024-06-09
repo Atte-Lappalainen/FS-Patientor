@@ -12,7 +12,7 @@ interface Props{
     onSubmit: () => void;
 }
 
-export const NewEntryForm = ({patientID, onSubmit}: Props) => {
+export const NewEntryForm = ({patientID, onSubmit}: Props): JSX.Element => {
 
     const [description, setDescription] = useState('');
     const [specialist, setSpecialist] = useState('');
