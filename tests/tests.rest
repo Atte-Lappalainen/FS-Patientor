@@ -1,0 +1,53 @@
+
+//"d2773336-f723-11e9-8f0b-362b9e155667" - mclane
+
+POST http://localhost:3001/api/patients/d2773336-f723-11e9-8f0b-362b9e155667/entries HTTP/1.1
+content-type: application/json
+
+{
+  "date": "2015-01-02",
+  "type": "Hospital",
+  "specialist": "MD House",
+  "diagnosisCodes": ["S62.5"],
+  "description": "Healing time appr. 2 weeks. patient doesn't remember how he got the injury.",
+  "discharge": {
+    "date": "2015-01-16",
+    "criteria": "Thumb has healed."
+  }
+}
+
+###
+
+POST http://localhost:3001/api/patients/d2773336-f723-11e9-8f0b-362b9e155667/entries HTTP/1.1
+content-type: application/json
+
+{
+  "date": "2017-01-02",
+  "type": "HealthCheck",
+  "specialist": "MD House",
+  "diagnosisCodes": ["J10.1"],
+  "description": "Patient Dead",
+  "healthCheckRating": 2
+}
+
+###
+
+POST http://localhost:3001/api/patients/d2773336-f723-11e9-8f0b-362b9e155667/entries HTTP/1.1
+content-type: application/json
+
+{
+  "date": "2007-01-02",
+  "type": "OccupationalHealthcare",
+  "specialist": "MD House",
+  "diagnosisCodes":  ["Z57.1", "Z74.3", "M51.2"],
+  "employerName": "HyPD",
+  "description": "Patient mistakenly found himself in a nuclear plant waste site without protection gear. Very minor radiation poisoning",
+  "sickLeave": {
+    "startDate": "2019-08-05",
+    "endDate": "2019-08-28"
+  }
+}
+
+###
+
+GET  http://localhost:3001/api/patients/d2773336-f723-11e9-8f0b-362b9e155667 HTTP/1.1
