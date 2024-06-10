@@ -15,7 +15,7 @@ const requestLogger = (request, _response, next) => {
     next();
 };
 const app = (0, express_1.default)();
-app.use(express_1.default.static('dist'));
+app.use(express_1.default.static('frontend/dist'));
 app.use(requestLogger);
 app.use(express_1.default.json());
 app.use(requestLogger);
