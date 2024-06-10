@@ -11,7 +11,7 @@ interface Props{
     entry: Entry
 }
 
-export const EntryAccordion = ({entry}: Props) => {
+export const EntryAccordion = ({entry}: Props): JSX.Element => {
     const [diagnoses, setDiagnoses] = useState<Diagnosis[]>([]);
     useEffect(() => {
         console.log(entry.diagnosisCodes);
