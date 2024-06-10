@@ -13,7 +13,7 @@ const requestLogger = (request: { method: any; path: any; body: any; }, _respons
 }
 
 const app = express();
-app.use(express.static('dist'))
+app.use(express.static('frontend/dist'))
 app.use(requestLogger)
 app.use(express.json());
 app.use(requestLogger)
