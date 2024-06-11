@@ -8,6 +8,7 @@
     "tsc": "tsc",
     "build": "cd frontend && npm run build && cd .. &&  npm run tsc",
     "dev": "ts-node-dev index.ts",
+    "dev:frontend": "cd frontend && npm run dev",
     "lint": "eslint --ext .ts .",
     "start": "node build/index.js"
   },
