@@ -7,6 +7,7 @@ import { EntryAccordion } from "./EntryAccordion";
 import MaleIcon from '@mui/icons-material/Male';
 import FemaleIcon from '@mui/icons-material/Female';
 import { NewEntryForm } from "./NewEntryForm";
+import { FormBorder } from "./FormBorder";
 
 
 
@@ -44,9 +45,9 @@ const SinglePatientPage = (): JSX.Element => {
         return(
             <div>
                 {(gendernum === 1) && 
-                <FemaleIcon fontSize="large"/>};
+                <FemaleIcon fontSize="large"/>}
                 {(gendernum === 2) && 
-                <MaleIcon fontSize="large"/>};
+                <MaleIcon fontSize="large"/>}
             </div>
         );
     };
@@ -78,8 +79,10 @@ const SinglePatientPage = (): JSX.Element => {
                     ))}
                 </div>
                 <div>
-                    <h3>Add new entry</h3>
-                    <NewEntryForm patientID={patient.id} onSubmit={get_patient_info}/>
+                    <FormBorder>
+                        <h3>Add new entry</h3>
+                        <NewEntryForm patientID={patient.id} onSubmit={get_patient_info}/>
+                    </FormBorder>
                 </div>
             </div>
             
