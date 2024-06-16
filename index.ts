@@ -1,6 +1,7 @@
 import express from 'express';
 import routerTest from './controllers/router';
 import cors from 'cors';
+require('dotenv').config()
 
 const PORT = process.env.PORT || 3001;
 

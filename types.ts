@@ -10,6 +10,8 @@ export enum Gender {
   Other = "other"
 }
 
+
+// Entry    #################################
 export enum HealthCheckRating {
   "Healthy" = 0,
   "LowRisk" = 1,
@@ -55,6 +57,7 @@ export type Entry =
   | HealthCheckEntry;
 
 
+// Patient    #################################
 export interface Patient {
   id: string;
   name: string;
@@ -73,3 +76,37 @@ export type PatientFormValues = Omit<Patient, "id" | "entries">;
 type UnionOmit<T, K extends string | number | symbol> = T extends unknown ? Omit<T, K> : never;
 // Define Entry without the 'id' property
 export type EntryWithoutId = UnionOmit<Entry, 'id'>;
+
+
+// User    #################################
+export type uuid = string;
+
+export interface User {
+  id: uuid;
+  name: string;
+  email: string;
+  hash: string;
+  profileIds: uuid[];
+}
+
+export interface ProfileBase {
+  id: uuid;
+  name: string;
+  userId: uuid;
+}
+
+export interface PatientProfile extends ProfileBase {
+  type: "patient"
+  patientId: uuid;
+  settings: undefined;
+}
+
+export interface SpecialistProfile extends ProfileBase {
+  type: "specialist"
+  patientIds: uuid[];
+  settings: undefined;
+}
+
+export type Profile = 
+    PatientProfile
+  | SpecialistProfile
