@@ -51,3 +51,29 @@ content-type: application/json
 ###
 
 GET  http://localhost:3001/api/patients/d2773336-f723-11e9-8f0b-362b9e155667 HTTP/1.1
+
+
+### 
+POST http://localhost:3001/api/user/new HTTP/1.1
+content-type: application/json
+
+{
+  "name": "otso",
+  "password": "123pass",
+  "email": "o@c.com"
+}
+
+
+###
+
+GET http://localhost:3001/api/user/all HTTP/1.1
+
+###
+
+POST http://localhost:3001/api/login/ HTTP/1.1
+content-Type: application/json
+
+{
+  "email": "a@b.com",
+  "password": "mule"
+}

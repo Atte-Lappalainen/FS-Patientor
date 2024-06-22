@@ -30,11 +30,11 @@ routerTest.get('/patients/:id', (req, res) => {
     data.forEach(e => {
       if (e.id === id) {
         res.send(e);
-        found = true
+        found = true;
       }
     });
     if (!(found)) {
-      console.log("not found")
+      console.log("not found");
       res.status(404).send('Sorry, cant find that');
     }
   });
@@ -43,8 +43,8 @@ routerTest.post('/patients/:id/entries', (req, res) => {
   console.log('Add patient entry');
   const id: string = req.params.id;
   try {
-    const new_entry = toNewEntry(req.body)
-    const added_entry = patientService.addEntry(id, new_entry)
+    const new_entry = toNewEntry(req.body);
+    const added_entry = patientService.addEntry(id, new_entry);
     res.send(added_entry);
     
   } catch (error) {
@@ -86,11 +86,11 @@ routerTest.get('/diagnoses/:code', (req, res) => {
     data.forEach(d => {
       if (d.code === code) {
         res.send(d);
-        found = true
+        found = true;
       }
     });
     if (!(found)) {
-      console.log("not found")
+      console.log("not found");
       res.status(404).send('Sorry, cant find that diagnosis');
     }
   });

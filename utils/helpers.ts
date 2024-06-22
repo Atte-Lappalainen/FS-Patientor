@@ -8,7 +8,7 @@ export const findUser = (users: User[], email: string): User | null => {
             user = u;   
         }
     }
-    )
+    );
     return user;
 
-}
+};

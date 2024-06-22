@@ -1,3 +1,5 @@
+export type uuid = string;
+
 export interface Diagnosis {
   code: string;
   name: string;
@@ -23,7 +25,7 @@ interface BaseEntry {
   id: string;
   description: string;
   date: string;
-  specialist: string;
+  specialist: uuid;
   diagnosisCodes?: string[];
 }
 
@@ -79,7 +81,6 @@ export type EntryWithoutId = UnionOmit<Entry, 'id'>;
 
 
 // User    #################################
-export type uuid = string;
 
 export interface User {
   id: uuid;
@@ -96,17 +97,19 @@ export interface ProfileBase {
 }
 
 export interface PatientProfile extends ProfileBase {
-  type: "patient"
+  type: "patient";
+  premium: number;
   patientId: uuid;
   settings: undefined;
 }
 
 export interface SpecialistProfile extends ProfileBase {
-  type: "specialist"
-  patientIds: uuid[];
+  type: "specialist";
+  employedStart: string;
+  emloyedEnd: string | undefined;
   settings: undefined;
 }
 
 export type Profile = 
     PatientProfile
-  | SpecialistProfile
+  | SpecialistProfile;
