@@ -12,11 +12,14 @@ import SinglePatientPage from "./components/PatientListPage/SinglePage";
 import { HeaderAppBar } from "./components/general/HeaderAppBar";
 import { HomePage } from "./components/pages/HomePage";
 import { BlogPage } from "./components/pages/Blogpage";
+import LoginPage from "./components/pages/LoginPage";
 
 
 
 const App = () => {
   const [patients, setPatients] = useState<Patient[]>([]);
+  const [token, setToken] = useState('');
+
 
   useEffect(() => {
     void axios.get<void>(`${apiBaseUrl}/ping`);
@@ -28,6 +31,8 @@ const App = () => {
     void fetchPatientList();
   }, []);
   
+  console.log(token);
+  
   return (
     <div className="App">
       <Router>
@@ -37,6 +42,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/blog" element={<BlogPage/>}/>
+            <Route path="/login" element={<LoginPage setToken={setToken}/>}/>
             <Route path="/patients" element={<PatientListPage patients={patients} setPatients={setPatients} />} />
             <Route path="/patients/:id" element={<SinglePatientPage  />}/>
           </Routes>

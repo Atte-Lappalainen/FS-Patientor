@@ -1,5 +1,5 @@
 import { Button } from "@mui/material";
-import { useState } from "react"
+import { useState } from "react";
 
 interface Props {
     children: JSX.Element[]
@@ -10,14 +10,14 @@ export const FormBorder = ({children}: Props): JSX.Element => {
 
     const showButtontext = () => {
         if (buttonstate) {
-            return <div>
+            return (<div>
                 Hide
-            </div>  
+            </div>);
         }
-        return <div>
+        return (<div>
                 add new entry
-            </div>  
-    }
+            </div>); 
+    };
 
 
     return (
@@ -29,5 +29,5 @@ export const FormBorder = ({children}: Props): JSX.Element => {
                 {children}
             </div>
         </div>
-    )
-}
+    );
+};
