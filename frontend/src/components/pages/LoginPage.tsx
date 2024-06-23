@@ -11,12 +11,13 @@ const LoginPage = ({setToken}: Props) => {
     const [showerror, setShowerror] = useState(false);
 
     const submitLogin = (email: string, password: string): void => {
-        login(email, password).then(res => {
+        login(email, password).then((res) => {
             if (!res) {
                 setShowerror(true);
-                
+            
             } else {
                 setToken(res);
+                setShowerror(false);
             }
         });
     };

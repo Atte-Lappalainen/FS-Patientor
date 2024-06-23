@@ -3,7 +3,7 @@ import axios from "axios";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Divider, Container } from '@mui/material';
 
-import { apiBaseUrl } from "./constants";
+import { apiBaseUrl } from "./helpers/constants";
 import { Patient } from "./types";
 
 import patientService from "./services/patients";
@@ -13,8 +13,7 @@ import { HeaderAppBar } from "./components/general/HeaderAppBar";
 import { HomePage } from "./components/pages/HomePage";
 import { BlogPage } from "./components/pages/Blogpage";
 import LoginPage from "./components/pages/LoginPage";
-
-
+import { AuthContext } from "./helpers/state/AuthContext";
 
 const App = () => {
   const [patients, setPatients] = useState<Patient[]>([]);
@@ -32,9 +31,10 @@ const App = () => {
   }, []);
   
   console.log(token);
-  
+
   return (
     <div className="App">
+      <AuthContext.Provider value={token}>
       <Router>
         <HeaderAppBar/>
         <Container>
@@ -48,6 +48,7 @@ const App = () => {
           </Routes>
         </Container>
       </Router>
+    </AuthContext.Provider>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import axios from "axios";
 import { Diagnosis} from "../types";
 
-import { apiBaseUrl } from "../constants";
+import { apiBaseUrl } from "../helpers/constants";
 
 
 
