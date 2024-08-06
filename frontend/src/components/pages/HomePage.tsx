@@ -1,16 +1,13 @@
 import { Typography } from "@mui/material"
 
 
-
-
-
 export const HomePage = () => {
 
     return (
         <div>
-            <Typography>
-                Home page
-            </Typography>
+            <Typography variant="h2" style={{ marginBottom: "0.5em" }}>
+            Patientor
+          </Typography>
         </div>
     )
 

@@ -4,16 +4,26 @@ import {data as user_data} from '../data/users'
 import { findUser } from "../utils/helpers";
 import express from 'express';
 import { uuid } from '../types';
+
+type Request = {
+  body: {
+  email: string
+  password: string
+  }
+}
+
+
 const loginRouter = express.Router();
 
 
+const a = async (req: Request, res) => {
 
-loginRouter.post('/', async (req, res) => {
+  try {
     const auth: {email: string, password: string} = req.body
     const claimed_user = findUser(user_data, auth.email)
     if (!claimed_user) {
         console.error("no user found")
-        return res.status(401).json({
+          await res.status(401).json({
             error: "no user found"
           })
     }
@@ -23,18 +33,30 @@ loginRouter.post('/', async (req, res) => {
 
     if (!password_correct) {
         console.error("incorrect password")
-        return res.status(401).json({
+         await res.status(401).json({
             error: "incorrect password"
           })
     }
+
 
     const idForToken: {id: uuid} = {
         id: claimed_user.id
       }
 
-    const token = jwt.sign(idForToken, process.env.JWT_SECRET as Secret)
+    const token = await jwt.sign(idForToken, process.env.JWT_SECRET as Secret)
+
+    res.send(token).status(200)
+    
+  } catch (error) {
+    console.log(error)
+    
+  }
+
+    
 
 }
+
+loginRouter.post('/', a
 )
 
 export default loginRouter;

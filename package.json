@@ -7,7 +7,7 @@
     "test": "test",
     "tsc": "tsc",
     "build": "cd frontend && npm run build && cd .. &&  npm run tsc",
-    "dev": "ts-node-dev index.ts",
+    "dev:api": "ts-node-dev index.ts",
     "dev:frontend": "cd frontend && npm run dev",
     "lint": "eslint --ext .ts .",
     "lint_frontend": "cd frontend && npm run lint",
@@ -27,6 +27,9 @@
     "@typescript-eslint/eslint-plugin": "^7.10.0",
     "@typescript-eslint/parser": "^7.10.0",
     "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "prettier": "^3.3.3",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.4.5"
   },

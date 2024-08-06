@@ -51,7 +51,7 @@ const PatientListPage = ({ patients, setPatients } : Props ):  JSX.Element => {
   return (
     <div className="App">
       <Box>
-        <Typography align="center" variant="h6">
+        <Typography align="left" variant="h4">
           Patient list
         </Typography>
       </Box>

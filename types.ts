@@ -11,7 +11,7 @@ export enum Gender {
 }
 
 
-// Entry    #################################
+// Entry    ###################
 export enum HealthCheckRating {
   "Healthy" = 0,
   "LowRisk" = 1,
@@ -57,7 +57,7 @@ export type Entry =
   | HealthCheckEntry;
 
 
-// Patient    #################################
+// Patient #################################
 export interface Patient {
   id: string;
   name: string;
@@ -78,7 +78,7 @@ type UnionOmit<T, K extends string | number | symbol> = T extends unknown ? Omit
 export type EntryWithoutId = UnionOmit<Entry, 'id'>;
 
 
-// User    #################################
+// User ################
 export type uuid = string;
 
 export interface User {
