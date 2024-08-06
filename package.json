@@ -29,10 +29,15 @@
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
     "prettier": "^3.3.3",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.4.5"
   },
+  "workspaces": [
+    "packages/frontend",
+    "packages/core"
+  ],
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.19.2",

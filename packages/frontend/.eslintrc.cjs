@@ -4,11 +4,12 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
+    "plugin:prettier/recommended", // Enable this when time is correct. Modified pretty much every file in project
     'plugin:react-hooks/recommended',
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
-  plugins: ['react-refresh', 'prettier'],
+  plugins: ['react-refresh', 'prettier', 'simple-import-sort'],
   rules: {
     'react-refresh/only-export-components': [
       'warn',
@@ -27,7 +28,6 @@ module.exports = {
     "import/order": "off",
     "react-hooks/exhaustive-deps": "warn",
     "react/display-name": "off",
-    "react/no-unknown-property": ['error', { ignore: ['css'] }],
     "react/prop-types": "off",
     "simple-import-sort/exports": "error",
     "simple-import-sort/imports": "error",
